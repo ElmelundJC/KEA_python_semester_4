@@ -30,6 +30,8 @@ first_set = {'a', 'e', 'i', 'o', 'u', 'y'}
 second_set = {'a', 'e', 'i', 'o', 'u', 'y', 'æ', 'ø', 'å'}
 
 
+# The prints down below, has been made with operators and method calls
+
 print('------ Union --------')
 union_set_operator = (first_set | second_set)
 union_set_union = first_set.union(second_set)
