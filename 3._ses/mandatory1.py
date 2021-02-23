@@ -18,6 +18,8 @@ dicts = {"a": "Alpha", "b": "Beta", "g": "Gamma"}
 # converting into list of tuple
 
 mylist = [(k, v) for k, v in dicts.items()]
+# samme opgave bliver løst med følgende funktion.. lavet efterfølgende
+print(list(dicts.items()))
 
 # printing list of tuple
 print(f'List of tuples: {mylist}')
