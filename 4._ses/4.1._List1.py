@@ -16,13 +16,25 @@
 # strings where the string length is 2 or more and the first
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
+
+
+# (values) = [(expression) for (item) in (collection)]
+
+# (values) = []
+# for (item) in (collection):
+#    (values).append((expression))
+
+
 def match_ends(words):
     # +++your code here+++
-    count = 0
-    for x in words:
-        if len(x) > 1 and x[0] == x[-1]:
-            count += 1
-    return count
+    return len([w for w in words if len(w) > 1 and w[0] == w[-1]])
+
+ #   return len([x for x in words if len(x) > 1 and x[0] == x[-1]])
+
+ #  for x in words:
+ #      if len(x) > 1 and x[0] == x[-1]:
+ #          count += 1
+ #  return count
 
 
 # B. front_x
@@ -34,14 +46,19 @@ def match_ends(words):
 # before combining them.
 def front_x(words):
     # +++your code here+++
-    a = []
-    b = []
-    for x in words:
-        if x[0] == 'x':
-            a.append(x)
-        else:
-            b.append(x)
+    a = [x for x in words if x[0] == 'x']
+    b = [x for x in words if x[0] != 'x']
+
     return sorted(a) + sorted(b)
+
+#    a = []
+#    b = []
+#    for x in words:
+#        if x[0] == 'x':
+#            a.append(x)
+#        else:
+#            b.append(x)
+#    return sorted(a) + sorted(b)
 
 
 # C. sort_last
@@ -54,9 +71,9 @@ def front_x(words):
 
 def sort_last(tuples):
     # +++your code here+++
+    # Not suited for list comprehension
     def list_return(x):
         return x[-1]
-
     return sorted(tuples, key=list_return)
 
 
