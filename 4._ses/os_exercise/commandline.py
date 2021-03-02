@@ -1,10 +1,16 @@
 import sys
 
-def greeting(x):
-	
-	if len(x) == 2 and x[1] == '-it':
-		print('interactive terminal started')
-	if len(x) == 3 and x[2] == '--rm':
-		print('Will be removed at exit')
+def main(argv):
+	print(len(sys.argv))
+	if argv[1] != 'it':
+		print('Usage: python script.py [-it]{--rm}')
+	if len(argv) == 3 and argv[2] != '--rm':
+		print('Usage: python script.py [-it]{--rm}')
+	elif len(argv) ==3 and argv[2] == '--rm':
+		print('Goodbye')
+	else:
+		input()
 
-greeting(sys.argv)
+	sys.exit()
+
+main(sys.argv)
